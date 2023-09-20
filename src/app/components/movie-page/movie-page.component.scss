@@ -1,0 +1,100 @@
+@import "src/app/styles/components/mixins.scss";
+@import "src/app/styles/components/variables.scss";
+
+.user-container {
+  @include bg-image(url(../../../assets/user-background.jpg));
+  @include center-element;
+  @include container;
+  flex-direction: column;
+  &-form {
+    @include center-element;
+    width: 100%;
+    &-input {
+      width: 80%;
+      font-size: 1.2rem;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      text-align: center;
+      border-bottom: 1px solid $base-font-color;
+      color: $base-font-color;
+      letter-spacing: 3px;
+    }
+    &-button {
+      border: none;
+      outline: none;
+      background-color: transparent;
+      color: $base-font-color;
+      cursor: pointer;
+      .mat-icon {
+        font-size: 2.5rem;
+        transition: $animation;
+        &:hover,
+        &:focus {
+          transform: scale(1.2);
+          transition: $animation;
+        }
+      }
+    }
+  }
+}
+.results-notification {
+  position: absolute;
+  bottom: 15%;
+}
+.notification-item {
+  text-align: center;
+  font-size: 1.3rem;
+  .mat-icon {
+    @include center-element;
+    width: 50px;
+    height: 50px;
+    border: 1px solid $base-font-color;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+}
+.icon {
+  margin-top: 20px;
+  transition: $animation;
+  cursor: pointer;
+  :hover {
+    opacity: 0.5;
+    transition: $animation;
+  }
+}
+.arrow-up {
+  position: sticky;
+  bottom: 15%;
+  left: 90%;
+  font-size: 2.5rem;
+  cursor: pointer;
+  @include center-element;
+  width: 50px;
+  height: 50px;
+  border: 2px solid $base-font-color;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.results-container {
+  background-color: $secondary-font-color;
+  padding-bottom: 100px;
+}
+.load-more-btn {
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .user-container-form-input {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .user-container-form-input {
+    width: 30%;
+  }
+}
+
+.mat-icon {
+    height: auto;
+    width: auto;
+}

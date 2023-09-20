@@ -1,0 +1,56 @@
+<header class="homepage-header">
+    <nav class="homepage-nav">
+        <div class="homepage-logo">
+            <a routerLink="/user" class="homepage-logo-link">
+                <img src="assets/movie-logo.png" alt="logo" width="70" height="70" />
+                Your Shows
+            </a>
+        </div>
+        <!--div class="homepage-user-menu" *ngIf="auth.isAuthenticated(); else homePage">
+            <app-menu-list [menuList]="menuListItems"></app-menu-list>
+            <button class="btn logout-btn" (click)="logOut($event)">
+                <mat-icon>exit_to_app</mat-icon>
+                Log Out
+            </button>
+        </div-->
+        <div class="homepage-buttons">
+            <a class="btn" routerLink="/register"> Sign Up</a>
+            <a class="btn" routerLink="/login"> Log In</a>
+        </div>
+        <!--mat-icon class="menu-mat-icon" *ngIf="!mobileMenu" (click)="toggleMenu()">
+                menu</mat-icon>
+            <mat-icon class="menu-mat-icon" *ngIf="closeMenu" (click)="toggleMenu()">
+                close</mat-icon-->
+        <div class="homepage-mobile-menu" *ngIf="mobileMenu">
+            <a class="homepage-mobile-menu-item" (click)="onRegister()"> Sign Up</a>
+            <a class="homepage-mobile-menu-item" (click)="onLogin()"> Log In</a>
+        </div>
+    </nav>
+</header>
+
+<ng-template #homePage>
+    <div class="homepage-buttons">
+        <a class="btn" routerLink="/register"> Sign Up</a>
+        <a class="btn" routerLink="/login"> Log In</a>
+    </div>
+    <!--mat-icon class="menu-mat-icon" *ngIf="!mobileMenu" (click)="toggleMenu()">
+        menu</mat-icon>
+    <mat-icon class="menu-mat-icon" *ngIf="closeMenu" (click)="toggleMenu()">
+        close</mat-icon-->
+    <div class="homepage-mobile-menu" *ngIf="mobileMenu">
+        <a class="homepage-mobile-menu-item" (click)="onRegister()"> Sign Up</a>
+        <a class="homepage-mobile-menu-item" (click)="onLogin()"> Log In</a>
+    </div>
+</ng-template>
+
+<div class="homepage-container">
+    <div class="homepage-content-container">
+        <h1 class="homepage-title">A TV-Show Lover’s Dream</h1>
+        <p class="homepage-text">
+            Classics and discoveries from around the world, thematically programmed
+            with special features,<br />
+            on a streaming service brought to you by the Perfect Collection
+        </p>
+        <a class="btn" routerLink="/register">Join now!</a>
+    </div>
+</div>

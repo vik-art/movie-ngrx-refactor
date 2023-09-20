@@ -1,0 +1,32 @@
+<div class="login-container">
+    <!--div class="alert" *ngIf="auth.error$ | async as error">
+        {{ error }}
+    </div-->
+    <form [formGroup]="form" class="login-form" (ngSubmit)="takeData()">
+        <div class="login-page-link">
+            <a class="login-page-link-home" routerLink="/">
+                <mat-icon>first_page</mat-icon> Homepage
+            </a>
+        </div>
+        <h2 class="form-title">{{ title }}</h2>
+        <span class="info-section" *ngIf="isRegistationForm; else forgetPassword">Already have an account? <a
+                routerLink="/login">Sing
+                in!</a></span>
+        <ng-template #forgetPassword>
+            <span class="info-section"> <a routerLink="/forgot-password"> Forgot your password? </a></span>
+        </ng-template>
+        <mat-form-field *ngIf="isRegistationForm">
+            <mat-label>Enter username</mat-label>
+            <input matInput formControlName="displayName" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Enter your email adress</mat-label>
+            <input matInput formControlName="email" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Enter your password</mat-label>
+            <input matInput formControlName="password" />
+        </mat-form-field>
+        <button type="submit" [disabled]="form.invalid" class="btn">Submit</button>
+    </form>
+</div>
