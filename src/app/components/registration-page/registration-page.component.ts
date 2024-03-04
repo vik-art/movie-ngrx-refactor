@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AuthRequest } from 'src/app/common/interfaces/user-request.interface';
 import { authActions } from 'src/app/store/auth/auth.actions';

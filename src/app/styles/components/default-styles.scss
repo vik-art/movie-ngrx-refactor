@@ -48,13 +48,13 @@ button:disabled {
 .btn {
   @include center-element;
   width: fit-content;
-  background-color: $primary-button-color;
-  color: $secondary-font-color;
+ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: $primary-button-color;
   font-weight: 700;
   border: none;
   font-size: 16px;
   text-transform: uppercase;
-  padding: 20px 40px;
+  padding: 10px 30px;
   border-radius: 5px;
   cursor: pointer;
   transition: $animation;

@@ -6,21 +6,12 @@
                 Your Shows
             </a>
         </div>
-        <!--div class="homepage-user-menu" *ngIf="auth.isAuthenticated(); else homePage">
-            <app-menu-list [menuList]="menuListItems"></app-menu-list>
+        <div class="homepage-user-menu" *ngIf="isAuthenticated(); else homePage">
             <button class="btn logout-btn" (click)="logOut($event)">
                 <mat-icon>exit_to_app</mat-icon>
                 Log Out
             </button>
-        </div-->
-        <div class="homepage-buttons">
-            <a class="btn" routerLink="/register"> Sign Up</a>
-            <a class="btn" routerLink="/login"> Log In</a>
         </div>
-        <!--mat-icon class="menu-mat-icon" *ngIf="!mobileMenu" (click)="toggleMenu()">
-                menu</mat-icon>
-            <mat-icon class="menu-mat-icon" *ngIf="closeMenu" (click)="toggleMenu()">
-                close</mat-icon-->
         <div class="homepage-mobile-menu" *ngIf="mobileMenu">
             <a class="homepage-mobile-menu-item" (click)="onRegister()"> Sign Up</a>
             <a class="homepage-mobile-menu-item" (click)="onLogin()"> Log In</a>

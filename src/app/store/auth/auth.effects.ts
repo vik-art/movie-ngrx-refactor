@@ -30,4 +30,20 @@ export class AuthEffects {
       })
     );
   });
+
+  loginExistingUser = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(authActions.login),
+      exhaustMap((action) => {
+        const { email, password } = action;
+        return this.http.signIn(email, password).pipe(
+          map(res => {
+            this.route.navigateByUrl('/movie');
+            this.alertService.success('You have successfully logged in')
+            return authActions.registerSuccess({ user: res.user });
+          })
+        )
+      })
+    )
+  })
 }

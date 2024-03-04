@@ -8,10 +8,10 @@ import { MoviePageComponent } from './components/movie-page/movie-page.component
 
 const routes: Routes = [
   { path: '', component: HomepageComponent, pathMatch: 'full' },
-  { path: 'register', component: RegistrationPageComponent},
+  { path: 'register', component: RegistrationPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  
+
   { path: 'movie', component: MoviePageComponent },
 ];
 @NgModule({

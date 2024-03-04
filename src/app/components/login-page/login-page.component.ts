@@ -1,5 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { authActions } from 'src/app/store/auth/auth.actions';
 
 @Component({
   selector: 'app-login-page',
@@ -13,7 +15,7 @@ export class LoginPageComponent{
   constructor(
     private route: Router,
     // private database: DatabaseService,
-    // private store: Store
+    private store: Store
   ) {}
 
   onLoginUser(event: any) {
@@ -25,7 +27,9 @@ export class LoginPageComponent{
       //         localStorage.setItem('id', user.id!);
       //       }
       //     });
-      //   });
+    //   });
+    this.store.dispatch(authActions.login(event))
+    console.log(event)
 
        
         this.route.navigate(['/user']);
